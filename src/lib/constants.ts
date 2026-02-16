@@ -9,7 +9,7 @@ export const PROJECTS: ProjectProps[] = [
     description:
       "Audio processing tool where users can either upload an audio file or record their audio and the track is converted to a color palette based on the spectral kurtosis, spectral spread and centroid of the audio at different intervals.",
     image: picaso,
-    liveUrl: "https://picaso.kayodedev.com/",
+    liveUrl: "https://picaso.kayode.app/",
     stacks: ["React", "Meyda", "NextJS"],
   },
   {
@@ -17,8 +17,8 @@ export const PROJECTS: ProjectProps[] = [
     description:
       "An AI-powered chatbot built with the ChatGPT-3.5 Turbo API and Google Gemini's API to handle prompts and generate images. This project highlights the capabilities of both AI models, showcasing how prompt structure influences responses and outputs.",
     image: dualmind,
-    liveUrl: "https://dualmind.kayodedev.com",
-    githubUrl: "https://github.com/kayode-dev/dualmind",
+    liveUrl: "https://dualmind.kayode.app",
+    githubUrl: "https://github.com/ka-yode/dualmind",
     stacks: [],
   },
   {
@@ -26,8 +26,8 @@ export const PROJECTS: ProjectProps[] = [
     description:
       "Rundwn is a web app that uses the Spotify API to provide on-demand insights into users' listening habits. It highlights top artists and activity over the past month, six months, and year, offering a seamless and interactive experience inspired by Spotify Wrapped.",
     image: rundwn,
-    liveUrl: "https://rundwn.kayodedev.com/",
-    githubUrl: "https://github.com/kayode-dev/wrapped-anytime",
+    liveUrl: "https://rundwn.kayode.app/",
+    githubUrl: "https://github.com/ka-yode/wrapped-anytime",
     stacks: ["React", "Tailwind CSS", "NextJS"],
   },
 ];
