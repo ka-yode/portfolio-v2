@@ -1,64 +1,83 @@
 import { LayoutSection } from "./components/layout-section";
 import Image from "next/image";
-import sideheroImage from "../app/assets/memojipeace.png";
-import kayode from "../app/assets/kayode.png";
+import sideheroImage from "../app/assets/memojipeace.webp";
+import kayode from "../app/assets/kayode.webp";
 import { ExperienceList } from "./components/experience-list";
 import { ProjectList } from "./components/project-list";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import memoiChefKiss from "@/app/assets/memojichefkiss.png";
-import memojiLaptop from "@/app/assets/memojiwlaptop.png";
-import memojiContact from "@/app/assets/memojicontact.png";
-import memojiEuphoria from "@/app/assets/memojieuphoria.png";
+import memoiChefKiss from "@/app/assets/memojichefkiss.webp";
+import memojiLaptop from "@/app/assets/memojiwlaptop.webp";
+import memojiContact from "@/app/assets/memojicontact.webp";
+import memojiEuphoria from "@/app/assets/memojieuphoria.webp";
+import { RESUME_URL } from "@/lib/site";
 
 export default function Home() {
   return (
     <div className="w-full mt-8">
       <div className="space-y-20 w-full">
         <div className="flex flex-col w-full items-center gap-10 md:flex-row-reverse justify-between">
-          <div className="relative">
+          <div className="relative shrink-0">
             <div className="size-52 min-w-52 rounded-full border-2 border-sky-400 p-1 overflow-hidden">
               <Image
                 src={kayode}
                 alt="Kayode Babalola"
+                sizes="208px"
                 className="w-full h-full rounded-full object-cover"
                 placeholder="blur"
               />
             </div>
             <Image
               src={sideheroImage}
-              alt="Kayode Babalola"
+              alt=""
               width={70}
               height={70}
+              sizes="70px"
               className="absolute bottom-0 right-0 z-10"
               placeholder="blur"
             />
           </div>
-          <div className="space-y-2">
-            <h2 className="text-3xl md:text-5xl font-bold">Kayode Babalola</h2>
-            <p className="md:text-xl text-neutral-400">Frontend Developer🏌🏾‍♂️</p>
-            <p className="md:text-balance md:text-lg">
-              I am a frontend developer with over three years of experience,
-              specializing in React.js and Next.js. I&apos;m also proficient
-              with Microsoft frameworks like Blazor and Razor Pages. While I
-              currently focus on frontend development, I have a strong interest
-              in expanding my skills to become a fullstack developer. I thrive
-              on solving problems, learning new technologies, and creating
-              seamless, user-friendly web experiences. I enjoy tackling
-              challenges, and continuously expanding my knowledge to grow as a
-              developer.
+          <div className="min-w-0 space-y-4">
+            <h1 className="text-3xl md:text-5xl font-bold">Kayode Babalola</h1>
+            <p className="md:text-xl text-neutral-400">Frontend Engineer 🏌🏾‍♂️</p>
+            <p className="max-w-xl leading-relaxed md:text-lg">
+              I turn complex workflows into simple web experiences with React and Next.js.
+              My work spans event platforms, workforce tools, and creative
+              experiments with audio and AI.
             </p>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="#projects"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-sky-400 px-4 py-2 font-medium text-neutral-950 transition-colors hover:bg-sky-300"
+              >
+                View work <ArrowUpRight className="size-4" aria-hidden="true" />
+              </a>
+              <a
+                href={RESUME_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-neutral-700 px-4 py-2 transition-colors hover:border-neutral-400"
+              >
+                Résumé <ArrowUpRight className="size-4" aria-hidden="true" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex min-h-11 items-center rounded-lg px-4 py-2 underline-offset-4 hover:underline"
+              >
+                Contact me
+              </a>
+            </div>
           </div>
         </div>
-        <LayoutSection id="exp" title="#exp" sectionMemoji={memoiChefKiss}>
-          <ExperienceList />
-        </LayoutSection>
         <LayoutSection
           id="projects"
           title="#projects"
           sectionMemoji={memojiLaptop}
         >
           <ProjectList />
+        </LayoutSection>
+        <LayoutSection id="exp" title="#experience" sectionMemoji={memoiChefKiss}>
+          <ExperienceList />
         </LayoutSection>
         <LayoutSection
           id="contact"

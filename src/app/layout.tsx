@@ -3,22 +3,24 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import { Footer } from "./components/footer";
+import { SITE_URL } from "@/lib/site";
 
-const raleway = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
-  adjustFontFallback: false,
   style: ["normal"],
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   title: "Kayode Babalola",
   description: "Kayode Babalola - Frontend Engineer",
   openGraph: {
     title: "Kayode Babalola",
     description: "Kayode Babalola - Frontend Engineer",
-    url: "https://kayodedev.com",
+    url: SITE_URL,
     siteName: "Kayode Babalola",
     locale: "en_US",
     type: "website",
@@ -48,13 +50,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${raleway.className} antialiased h-full w-full md:p-8  text-neutral-200 bg-neutral-950 bg-fixed  pb-0`}
+        className={`${poppins.className} antialiased min-h-screen w-full md:p-8 text-neutral-200 bg-neutral-950 pb-0`}
       >
-        <main className=" p-4 md:p-0 max-w-4xl mx-auto flex flex-col justify-between h-screen">
+        <div className="p-4 md:p-0 max-w-4xl mx-auto flex min-h-screen flex-col">
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:underline">
+            Skip to content
+          </a>
           <Navbar />
-          {children}
+          <main id="main-content" className="flex-1" tabIndex={-1}>
+            {children}
+          </main>
           <Footer />
-        </main>
+        </div>
       </body>
     </html>
   );

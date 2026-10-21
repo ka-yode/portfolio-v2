@@ -1,6 +1,9 @@
-export default async function sitemap() {
+import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
+
+export default function sitemap(): MetadataRoute.Sitemap {
   const routes = {
-    url: "https://kayodedev.com",
+    url: SITE_URL,
     lastModified: new Date().toISOString().split("T")[0],
   };
 

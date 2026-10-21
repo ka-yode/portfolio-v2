@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my experience as a Frontend De
 
 ## 🚀 Live Demo
 
-Visit the live portfolio: [kayodedev.com](https://kayodedev.com)
+Visit the live portfolio: [kayode.app](https://www.kayode.app)
 
 ## ✨ Features
 
@@ -25,7 +25,7 @@ Visit the live portfolio: [kayodedev.com](https://kayodedev.com)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **UI Components**: Custom components with [Class Variance Authority](https://cva.style/)
+- **UI Components**: Custom server-rendered components
 - **Deployment**: [Vercel](https://vercel.com/)
 
 ## 🏗️ Project Structure
@@ -45,7 +45,7 @@ src/
 ├── lib/
 │   ├── constants.ts        # Project and experience data
 │   ├── types.ts           # TypeScript type definitions
-│   └── utils.ts           # Utility functions
+│   └── site.ts            # Shared canonical site URL
 ```
 
 ## 🚀 Getting Started
@@ -93,11 +93,22 @@ Edit `src/lib/constants.ts` to add new projects to the `PROJECTS` array:
 {
   title: "Project Name",
   description: "Project description...",
+  implementation: "A brief explanation of how you built it...",
   image: projectImage,
+  imageAlt: "Describe what the project preview shows...",
+  imageCaption: "A short caption for the preview...",
   liveUrl: "https://project-url.com",
   githubUrl: "https://github.com/username/repo", // optional
   stacks: ["React", "Next.js", "TypeScript"],
 }
+```
+
+### Quality Checks
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
 ```
 
 ### Updating Experience
@@ -141,8 +152,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - **Email**: [babalolakayode44@gmail.com](mailto:babalolakayode44@gmail.com)
 - **LinkedIn**: [Connect with me](https://www.linkedin.com/in/kayodedev/)
-- **Portfolio**: [kayodedev.com](https://kayodedev.com)
+- **Portfolio**: [kayode.app](https://www.kayode.app)
 
 ---
 
-Built with ❤️ by [Kayode Babalola](https://kayodedev.com)
+Built with ❤️ by [Kayode Babalola](https://www.kayode.app)

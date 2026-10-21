@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 interface LayoutSectionProps {
   title: string;
@@ -13,16 +13,30 @@ export const LayoutSection = ({
   sectionMemoji,
 }: LayoutSectionProps) => {
   return (
-    <div className="section w-full space-y-4 md:space-y-8" id={id}>
+    <section
+      className="w-full space-y-4 md:space-y-8"
+      id={id}
+      aria-labelledby={`${id}-heading`}
+    >
       <div className="flex items-center gap-3">
         {sectionMemoji && (
-          <Image src={sectionMemoji} alt={title} className="size-12" />
+          <Image
+            src={sectionMemoji}
+            alt=""
+            width={48}
+            height={48}
+            sizes="48px"
+            className="size-12"
+          />
         )}
-        <h2 className="text-2xl font-semibold md:text-3xl italic underline">
+        <h2
+          id={`${id}-heading`}
+          className="text-2xl font-semibold md:text-3xl italic underline"
+        >
           {title}
         </h2>
       </div>
       {children}
-    </div>
+    </section>
   );
 };
