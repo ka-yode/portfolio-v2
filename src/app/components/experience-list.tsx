@@ -1,15 +1,10 @@
 import { EXPERIENCE } from "@/lib/constants";
-import { ExperienceProps } from "@/lib/types";
+import type { ExperienceProps } from "@/lib/types";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { StackPill } from "./stack-pill";
+import { RESUME_URL } from "@/lib/site";
 
-export const StackPill = ({ stack }: { stack: string }) => {
-  return (
-    <div className="flex items-center gap-2 rounded-lg border border-neutral-600/50 bg-neutral-800/60 px-4 py-1 text-xs">
-      {stack}
-    </div>
-  );
-};
 export const ExperienceCard = ({
   jobTitle,
   companyName,
@@ -22,19 +17,19 @@ export const ExperienceCard = ({
 }: ExperienceProps) => {
   return (
     <div className="space-y-8">
-      <div className="space-y-3 box-border group md:space-y-6">
-        <h2 className="text-lg md:text-xl group-hover:text-sky-400 duration-500 font-semibold">
+      <div className="space-y-3 box-border group md:space-y-4">
+        <h3 className="text-lg md:text-xl group-hover:text-sky-400 duration-500 font-semibold">
           {jobTitle} · {companyName}
-        </h2>
+        </h3>
         <p className="uppercase text-neutral-400 text-sm">
           {employmentType} · {startDate} - {endDate}
         </p>
-        <p className="leading-relaxed font-medium text-neutral-400 text-sm md:text-lg">
+        <p className="leading-relaxed text-neutral-300 text-sm md:text-base">
           {description}
         </p>
-        <ul className="space-y-3 list-disc list-outside text-sm md:text-base pl-5 text-neutral-400">
+        <ul className="space-y-2 list-disc list-outside text-sm md:text-base pl-5 text-neutral-400">
           {points?.map((p) => (
-            <li key={p} className="">
+            <li key={p}>
               {p}
             </li>
           ))}
@@ -60,11 +55,11 @@ export const ExperienceList = () => {
         ))}
       </div>
       <Link
-        href="https://docs.google.com/document/d/1lpm_fKDfbpaVqLn2wSG3UJ491TFyDZKoHFzKEQH7KPs/edit?usp=sharing"
+        href={RESUME_URL}
         target="_blank"
-        className="flex items-center text-neutral-500 text-lg"
+        className="inline-flex min-h-11 items-center gap-1 text-neutral-400 underline-offset-4 hover:underline"
       >
-        View Full Resume <ArrowUpRight />
+        View full résumé <ArrowUpRight className="size-4" aria-hidden="true" />
       </Link>
     </div>
   );

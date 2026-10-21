@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 
 export interface ExperienceProps {
   companyName: string;
@@ -8,7 +8,6 @@ export interface ExperienceProps {
   employmentType: string;
   points?: string[];
   description: string;
-  link: string;
   stacks: string[];
 }
 
@@ -17,6 +16,9 @@ export interface ProjectProps {
   image: StaticImageData;
   description: string;
   liveUrl: string;
+  implementation: string;
+  imageAlt: string;
+  imageCaption: string;
   githubUrl?: string;
   stacks: string[];
   comingSoon?: boolean;
