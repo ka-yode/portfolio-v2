@@ -1,7 +1,7 @@
 import { LayoutSection } from "./components/layout-section";
 import Image from "next/image";
 import sideheroImage from "../app/assets/memojipeace.webp";
-import kayode from "../app/assets/kayode.webp";
+import kayode from "../app/assets/kayode.jpg";
 import { ExperienceList } from "./components/experience-list";
 import { ProjectList } from "./components/project-list";
 import Link from "next/link";
@@ -41,9 +41,9 @@ export default function Home() {
             <h1 className="text-3xl md:text-5xl font-bold">Kayode Babalola</h1>
             <p className="md:text-xl text-neutral-400">Frontend Engineer 🏌🏾‍♂️</p>
             <p className="max-w-xl leading-relaxed md:text-lg">
-              I turn complex workflows into simple web experiences with React and Next.js.
-              My work spans event platforms, workforce tools, and creative
-              experiments with audio and AI.
+              I turn complex workflows into simple web experiences with React
+              and Next.js. My work spans event platforms, workforce tools, and
+              creative experiments with audio and AI.
             </p>
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
@@ -76,7 +76,11 @@ export default function Home() {
         >
           <ProjectList />
         </LayoutSection>
-        <LayoutSection id="exp" title="#experience" sectionMemoji={memoiChefKiss}>
+        <LayoutSection
+          id="exp"
+          title="#experience"
+          sectionMemoji={memoiChefKiss}
+        >
           <ExperienceList />
         </LayoutSection>
         <LayoutSection
